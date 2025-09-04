@@ -1,0 +1,26 @@
+name: wafer-scratch
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - scikit-image
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - ipykernel
+  - tqdm
+  - pillow
+  - h5py
+  - tensorflow=2.12
+  - keras=2.12
+  - xgboost
+  - optuna
+  - pip:
+      - rich
+      - imageio
+      - shap
