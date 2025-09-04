@@ -124,16 +124,31 @@ Example wafer map overlays showing detected scratches:
   <img src="assets/dYcvDI.png" width="350">
 </p>
 
-## ⚙️ How to Run
+⚙️ How to Run
 
+You can set up the environment using either Conda or pip/venv.
+
+**Option 1 – Conda**
 ```bash
-# Create environment
-python -m venv .venv && source .venv/bin/activate
+# Create and activate environment
+conda env create -f environment.yml
+conda activate wafer-scratch
+
+# Run the notebook
+jupyter lab notebooks/scratch_detection_GBT.ipynb
+
+```
+**Option 2 – pip + venv**
+```bash
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 
 # Run the notebook
-jupyter lab notebooks/scratch_detection.ipynb
-
+jupyter lab notebooks/scratch_detection_GBT.ipynb
 ```
 
 ### Summary of Features and Methodology
