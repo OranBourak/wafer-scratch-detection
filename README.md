@@ -50,19 +50,18 @@ The dataset contains die-level wafer map information:
 ---
 
 ## Approach
-
-1. **Data Preparation**
+**Data Preparation**
 
    - Wafer map CSVs converted into spatial grids.
    - Patches extracted around each die for local context.
 
-2. **Approach**
 
-## Modeling
+
+***Modeling***
 
 - **GBT/XGBoost baseline**: trained on neighborhood features for fast, interpretable predictions.
 
-## Engineered spatial features
+***Engineered spatial features***
 
 - **Basic fail indicator** (`is_fail`)  
   A binary flag marking whether a die is good or bad.
