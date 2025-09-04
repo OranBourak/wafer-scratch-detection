@@ -50,18 +50,18 @@ The dataset contains die-level wafer map information:
 ---
 
 ## Approach
-# Data Preparation
+### Data Preparation
 
    - Wafer map CSVs converted into spatial grids.
    - Patches extracted around each die for local context.
 
 
 
-# Modeling
+### Modeling
 
 - **GBT/XGBoost baseline**: trained on neighborhood features for fast, interpretable predictions.
 
-# Engineered spatial features
+### Engineered spatial features
 
 - **Basic fail indicator** (`is_fail`)  
   A binary flag marking whether a die is good or bad.
@@ -84,7 +84,7 @@ The dataset contains die-level wafer map information:
 - **Closed-loop region** (`on_closed_fail`)  
   Indicates if a die falls within a region formed by applying a morphological **closing** (dilation followed by erosion) on the fail map, which “closes” small holes and captures inked dies.
 
-# Features Explored
+### Features Explored
 
 - **Patch-CNN prototype**  
   Extracted 5×5 die patches for a convolutional approach—**abandoned** when training on full dataset took days on my PC.
