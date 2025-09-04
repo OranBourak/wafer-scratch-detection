@@ -120,8 +120,8 @@ On the held-out validation set (10% of wafers), the final XGBoost model achieved
 Example wafer map overlays showing detected scratches:
 
 <p align="center">
-  <img src="./assets/50cVJB.png" width="350">
-  <img src="assets/dYcvDI.png" width="350">
+  <img src="./assets/50cVJB.png" width="400">
+  <img src="assets/dYcvDI.png" width="400">
 </p>
 
 ⚙️ How to Run
