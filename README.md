@@ -11,7 +11,7 @@ Scratches typically appear as **linear tracks** across adjacent dies, leading to
 In the semiconductor industry, **"wafers"** are thin discs of semiconductor material, such as silicon, used to fabricate microelectronic devices such as transistors, integrated circuits, and other components. A single wafer can contain hundreds or thousands of individual devices, known as **"dies"**, which are typically cut or "diced" from the wafer after the manufacturing process is completed.
 
 <figure>
-  <img src="../assets/wafer.jpeg" width="350" height="280">
+  <img src="assets/wafer.jpeg" width="350" height="280">
   <figcaption>Fig.1 - An example of a standard wafer</figcaption>
 </figure>
 
@@ -50,18 +50,18 @@ The dataset contains die-level wafer map information:
 ---
 
 ## Approach
-**Data Preparation**
+# Data Preparation
 
    - Wafer map CSVs converted into spatial grids.
    - Patches extracted around each die for local context.
 
 
 
-***Modeling***
+# Modeling
 
 - **GBT/XGBoost baseline**: trained on neighborhood features for fast, interpretable predictions.
 
-***Engineered spatial features***
+# Engineered spatial features
 
 - **Basic fail indicator** (`is_fail`)  
   A binary flag marking whether a die is good or bad.
@@ -84,18 +84,18 @@ The dataset contains die-level wafer map information:
 - **Closed-loop region** (`on_closed_fail`)  
   Indicates if a die falls within a region formed by applying a morphological **closing** (dilation followed by erosion) on the fail map, which “closes” small holes and captures inked dies.
 
-## Features Explored
+# Features Explored
 
 - **Patch-CNN prototype**  
   Extracted 5×5 die patches for a convolutional approach—**abandoned** when training on full dataset took days on my PC.
 - **Two-hop fail count** (`two_hop_fail_count`)  
   Count of failed dies two steps away—initially included to capture broader clusters but **dropped** after it generated many false positives on isolated noise.
 
-3. **Evaluation**
+## Evaluation
 
    - Visualization: overlay predicted scratches on wafer maps.
 
-4. **Results**
+## Results
    - XGBoost provides a competitive baseline with lower compute cost.
    - Visualizations highlight good vs. scratch dies across wafers.
 
